@@ -1,3 +1,5 @@
+// This principle says that It is better that this object has only one responsability, and then we would do
+// the rest of tasks in other objects
 const fs = require("fs");
 
 class Journal {
@@ -19,8 +21,8 @@ class Journal {
   toString() {
     return Object.values(this.entries).join("\n");
   }
-  // This principle says that It is better that this object has only one responsability, and then we would do
-  // the rest of tasks in other objects
+
+  //This should be in a new Class
   //   save(filename) {
   //     fs.writeFileSync(filename, this.toString());
   //   }
