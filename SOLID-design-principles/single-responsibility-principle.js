@@ -46,8 +46,8 @@ class PersistenceManager {
 }
 
 let j = new Journal();
-j.addEntry("I cried today.");
-j.addEntry("I ate a bug.");
+j.addEntry("I ate very spicy nuddles.");
+j.addEntry("I like learning to code.");
 console.log(j.toString());
 
 let p = new PersistenceManager();
