@@ -74,8 +74,8 @@ for (let word of words) {
   builder.addChild("li", word);
 }
 
-console.log(builder.root);
-console.log(builder.build().toString());
+// console.log(builder.root);
+// console.log(builder.build().toString());
 
 // with the new create() method
 let builder2 = Tag.create("div");
