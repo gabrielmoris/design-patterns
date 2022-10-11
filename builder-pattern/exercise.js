@@ -54,3 +54,6 @@ class CodeBuilder {
 let cb = new CodeBuilder("Person");
 cb.addField("name").addField("age");
 console.log(cb.toString());
+let personClass = `(${cb.toString()})`;
+let pc = eval(personClass);
+console.log(pc);
