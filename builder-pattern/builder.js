@@ -49,7 +49,7 @@ class HtmlBuilder {
     this.root.children.push(child);
   }
 
-  // fluent
+  // fluent (returning THIS)
   addChildFluent(childName, childText) {
     let child = new Tag(childName, childText);
     this.root.children.push(child);
