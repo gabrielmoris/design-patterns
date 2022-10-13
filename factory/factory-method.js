@@ -44,6 +44,7 @@ class Point {
   }
 }
 
+//Factory function
 class PointFactory {
   // not necessarily static
   newCartesianPoint(x, y) {
