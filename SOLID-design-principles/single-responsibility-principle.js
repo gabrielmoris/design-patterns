@@ -1,3 +1,29 @@
+// A class that represents a car with its properties
+class Car {
+  constructor(name, model, year) {
+    this.name = name;
+    this.model = model;
+    this.year = year;
+  }
+}
+
+// A separate service class for handling API calls related to cars
+class CarService {
+  static getCar(id) {
+    // logic to fetch a car from an API
+  }
+
+  static saveCar(car) {
+    // logic to save a car to an API
+  }
+}
+
+// Usage
+const myCar = new Car("Tesla", "Model S", 2020);
+CarService.saveCar(myCar);
+
+///////////////////// ANOTHER EXAMPLE /////////////////////
+
 // This principle says that It is better that this object has only one responsability, and then we would do
 // the rest of tasks in other objects
 const fs = require("fs");
@@ -60,29 +86,3 @@ console.log(j.toString());
 let p = new PersistenceManager();
 let filename = "output.txt";
 p.saveToFile(j, filename);
-
-///////////////////// ANOTHER EXAMPLE /////////////////////
-
-// A class that represents a car with its properties
-class Car {
-  constructor(name, model, year) {
-    this.name = name;
-    this.model = model;
-    this.year = year;
-  }
-}
-
-// A separate service class for handling API calls related to cars
-class CarService {
-  static getCar(id) {
-    // logic to fetch a car from an API
-  }
-
-  static saveCar(car) {
-    // logic to save a car to an API
-  }
-}
-
-// Usage
-const myCar = new Car("Tesla", "Model S", 2020);
-CarService.saveCar(myCar);

@@ -1,4 +1,56 @@
-//Objects are open to extension but closed for modification. JAvascript doesnt have enums, so we freeze the objects instead.
+//In this example, Shape is a base class that is closed for modification (you don’t change it), but open for extension
+// (devs can create new shapes like Rectangle and Circle that extend Shape)
+
+// Base class for shapes that provides an interface to calculate area
+class Shape {
+  getArea() {
+    throw new Error("Area method must be implemented");
+  }
+}
+
+// Extended classes that implement the area method
+class Rectangle extends Shape {
+  constructor(width, height) {
+    super();
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+class Circle extends Shape {
+  constructor(radius) {
+    super();
+    this.radius = radius;
+  }
+
+  getArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+// A class that uses Shape objects to calculate total area, without knowing the specific type of shape
+class AreaCalculator {
+  static calculateTotalArea(shapes) {
+    return shapes.reduce((area, shape) => {
+      if (shape instanceof Shape) {
+        return area + shape.getArea();
+      }
+      throw new Error("Invalid shape");
+    }, 0);
+  }
+}
+
+// Usage
+const shapes = [new Rectangle(5, 3), new Circle(2)];
+const totalArea = AreaCalculator.calculateTotalArea(shapes);
+console.log(totalArea); // Outputs the total area of all shapes
+
+///////////////////// ANOTHER EXAMPLE /////////////////////
+//Objects are open to extension but closed for modification. Javascript doesnt have enums, so we freeze the objects instead.
 let Color = Object.freeze({
   red: "red",
   green: "green",
@@ -111,55 +163,3 @@ let spec = new AndSpecification(
 for (let p of bf.filter(products, spec)) {
   console.log(p);
 }
-
-///////////////////// ANOTHER EXAMPLE /////////////////////
-//In this example, Shape is a base class that is closed for modification (you don’t change it), but open for extension
-// (devs can create new shapes like Rectangle and Circle that extend Shape)
-
-// Base class for shapes that provides an interface to calculate area
-class Shape {
-  getArea() {
-    throw new Error("Area method must be implemented");
-  }
-}
-
-// Extended classes that implement the area method
-class Rectangle extends Shape {
-  constructor(width, height) {
-    super();
-    this.width = width;
-    this.height = height;
-  }
-
-  getArea() {
-    return this.width * this.height;
-  }
-}
-
-class Circle extends Shape {
-  constructor(radius) {
-    super();
-    this.radius = radius;
-  }
-
-  getArea() {
-    return Math.PI * this.radius * this.radius;
-  }
-}
-
-// A class that uses Shape objects to calculate total area, without knowing the specific type of shape
-class AreaCalculator {
-  static calculateTotalArea(shapes) {
-    return shapes.reduce((area, shape) => {
-      if (shape instanceof Shape) {
-        return area + shape.getArea();
-      }
-      throw new Error("Invalid shape");
-    }, 0);
-  }
-}
-
-// Usage
-const shapes = [new Rectangle(5, 3), new Circle(2)];
-const totalArea = AreaCalculator.calculateTotalArea(shapes);
-console.log(totalArea); // Outputs the total area of all shapes

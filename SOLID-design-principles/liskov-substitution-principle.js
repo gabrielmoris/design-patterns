@@ -1,3 +1,50 @@
+// A superclass representing a bird
+class Bird {
+  fly() {
+    return "I can fly!";
+  }
+}
+
+// A subclass representing a duck, which can fly like a bird
+class Duck extends Bird {
+  quack() {
+    return "Quack!";
+  }
+}
+
+// A subclass representing a penguin, which cannot fly, so it overrides the fly method
+class Penguin extends Bird {
+  fly() {
+    throw new Error("Cannot fly");
+  }
+  swim() {
+    return "I can swim!";
+  }
+}
+
+// A function that expects a Bird object and calls its fly method
+function makeBirdFly(bird) {
+  return bird.fly();
+}
+
+// Using the function with a Bird or Duck object works as expected
+makeBirdFly(new Bird()); // "I can fly!"
+makeBirdFly(new Duck()); // "I can fly!"
+
+// Using the function with a Penguin object will throw an error, violating LSP
+try {
+  makeBirdFly(new Penguin());
+} catch (e) {
+  console.error(e.message); // "Cannot fly"
+}
+
+// In this example, the Penguin class violates the LSP because it changes the behavior
+// of the fly method inherited from the Bird superclass. To adhere to LSP, the Penguin class
+// should not override the fly method in a way that breaks the contract established by the Bird class.
+// Instead, we could have a separate hierarchy for non-flying birds or handle the flying capability
+// through composition rather than inheritance.
+
+///////////////////// ANOTHER EXAMPLE /////////////////////
 class Rectangle {
   constructor(width, height) {
     this.width = width;
@@ -84,7 +131,7 @@ let sqWrong2 = new SquareWrong(5);
 let useIt = function (rectangle) {
   let width = rectangle._width;
   rectangle.height = 10;
-  //the area should be now 10 * width
+  //the area is now 10 * width
   console.log(`
   Expected area of ${10 * width}
   I got ${rectangle.area}
