@@ -2,6 +2,7 @@
 // the rest of tasks in other objects
 const fs = require("fs");
 
+// It keeps the entries and manages them. This would be the base class.
 class Journal {
   constructor() {
     this.entries = {};
@@ -22,7 +23,8 @@ class Journal {
     return Object.values(this.entries).join("\n");
   }
 
-  //This should be in a new Class
+  // What should I do If I want to save the entries in FS?
+  //This should be in a new Class. Not here, because his class only should have 1 single responsability
   //   save(filename) {
   //     fs.writeFileSync(filename, this.toString());
   //   }
@@ -35,11 +37,14 @@ class Journal {
   //     //
   //   }
 }
+
 Journal.count = 0;
 
+// For this reason I would have a persistant manager class.
 class PersistenceManager {
   preprocess(j) {
-    //
+    // any function to process
+    console.log(j);
   }
 
   saveToFile(journal, filename) {
@@ -53,8 +58,31 @@ j.addEntry("I like learning to code.");
 console.log(j.toString());
 
 let p = new PersistenceManager();
-let filename =
-  "/home/gabriel/udemy/design-patterns/SOLID-design-principles/journal.txt";
+let filename = "output.txt";
 p.saveToFile(j, filename);
 
-// separation of concerns
+///////////////////// ANOTHER EXAMPLE /////////////////////
+
+// A class that represents a car with its properties
+class Car {
+  constructor(name, model, year) {
+    this.name = name;
+    this.model = model;
+    this.year = year;
+  }
+}
+
+// A separate service class for handling API calls related to cars
+class CarService {
+  static getCar(id) {
+    // logic to fetch a car from an API
+  }
+
+  static saveCar(car) {
+    // logic to save a car to an API
+  }
+}
+
+// Usage
+const myCar = new Car("Tesla", "Model S", 2020);
+CarService.saveCar(myCar);
