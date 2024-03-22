@@ -1,4 +1,4 @@
-//Objects are open to extension but closed for modification.
+//Objects are open to extension but closed for modification. JAvascript doesnt have enums, so we freeze the objects instead.
 let Color = Object.freeze({
   red: "red",
   green: "green",
@@ -19,12 +19,6 @@ class Product {
   }
 }
 
-let apple = new Product("Apple", Color.green, Size.small);
-let tree = new Product("Tree", Color.green, Size.large);
-let house = new Product("House", Color.blue, Size.large);
-
-let products = [apple, tree, house];
-
 //Without the open-closed-principle
 class ProductFilter {
   filterByColor(products, color) {
@@ -38,13 +32,19 @@ class ProductFilter {
   filterBySizeAndColor(products, size, color) {
     return products.filter((p) => p.size === size && p.color === color);
   }
-  //If my boss asks for more filters, I will run into a STATE SPACE EXPLOSION
-  //If i have 3 criterias can be even / different methods
+  //If i want to implement more filters, I will run into a STATE SPACE EXPLOSION
+  //If i have 3 criterias can be even 7 different methods. by color and size, by color and place...
   //To avoid this we create a class called specification
 }
 
+let apple = new Product("Apple", Color.green, Size.small);
+let tree = new Product("Tree", Color.green, Size.large);
+let house = new Product("House", Color.blue, Size.large);
+
+let products = [apple, tree, house];
+
 let pf = new ProductFilter();
-console.log("Green products (using old approach): ");
+console.log("Green products (using normal approach): ");
 for (let p of pf.filterByColor(products, Color.green)) {
   console.log(p);
 }
@@ -80,7 +80,7 @@ class SizeSpecification {
 //   isSatisfied(item) {}
 // }
 
-//And I can combine filters
+//And I can combine filters. This is called Combinator.
 
 class AndSpecification {
   constructor(...specs) {
@@ -111,3 +111,55 @@ let spec = new AndSpecification(
 for (let p of bf.filter(products, spec)) {
   console.log(p);
 }
+
+///////////////////// ANOTHER EXAMPLE /////////////////////
+//In this example, Shape is a base class that is closed for modification (you don’t change it), but open for extension
+// (devs can create new shapes like Rectangle and Circle that extend Shape)
+
+// Base class for shapes that provides an interface to calculate area
+class Shape {
+  getArea() {
+    throw new Error("Area method must be implemented");
+  }
+}
+
+// Extended classes that implement the area method
+class Rectangle extends Shape {
+  constructor(width, height) {
+    super();
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+class Circle extends Shape {
+  constructor(radius) {
+    super();
+    this.radius = radius;
+  }
+
+  getArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+// A class that uses Shape objects to calculate total area, without knowing the specific type of shape
+class AreaCalculator {
+  static calculateTotalArea(shapes) {
+    return shapes.reduce((area, shape) => {
+      if (shape instanceof Shape) {
+        return area + shape.getArea();
+      }
+      throw new Error("Invalid shape");
+    }, 0);
+  }
+}
+
+// Usage
+const shapes = [new Rectangle(5, 3), new Circle(2)];
+const totalArea = AreaCalculator.calculateTotalArea(shapes);
+console.log(totalArea); // Outputs the total area of all shapes
