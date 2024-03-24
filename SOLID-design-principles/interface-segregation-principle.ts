@@ -1,5 +1,39 @@
 //THIS PRINCIPLE IS NOT RELEVANT IN JAVASCRIPT AS IN ANOTHER LANGUAGES
-class Document {}
+
+// Let’s illustrate this with a JavaScript example using TypeScript (since JavaScript doesn’t have a built-in interface feature).
+// Consider an interface Vehicle:
+interface Vehicle {
+  make: string;
+  numberOfWheels: number;
+  maxSpeed?: number;
+  getReachKm(fuel: number, kmPerLitre: number): number;
+}
+
+// And a class Car that implements this interface:
+class Car implements Vehicle {
+  make: string;
+  numberOfWheels: number;
+  maxSpeed: number;
+
+  constructor(make, numberOfWheels, maxSpeed) {
+    this.make = make;
+    this.numberOfWheels = numberOfWheels;
+    this.maxSpeed = maxSpeed;
+  }
+
+  getReachKm(fuel: number, kmPerLitre: number) {
+    return fuel * kmPerLitre;
+  }
+}
+
+const carObj = new Car("BMW", 4, 240);
+
+// In this example, the Car class is not forced to implement any methods that it doesn’t use. This is in line with the Interface Segregation Principle
+// The goal of ISP is to reduce the side effects and frequency of required changes by splitting the software into multiple, independent parts
+
+///////////////////// ANOTHER EXAMPLE /////////////////////
+
+class Document2 {}
 
 //this class can not be constructed
 class Machine {
@@ -70,9 +104,9 @@ class NotImplementedError extends Error {
   constructor(name) {
     let msg = `${name} is not implemented`;
     super(msg);
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, NotImplementedError);
-    }
+    // if (Error.captureStackTrace) {
+    //   Error.captureStackTrace(this, NotImplementedError);
+    // }
   }
 }
 
