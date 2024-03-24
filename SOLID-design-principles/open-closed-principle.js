@@ -50,6 +50,7 @@ const totalArea = AreaCalculator.calculateTotalArea(shapes);
 console.log(totalArea); // Outputs the total area of all shapes
 
 ///////////////////// ANOTHER EXAMPLE /////////////////////
+
 //Objects are open to extension but closed for modification. Javascript doesnt have enums, so we freeze the objects instead.
 let Color = Object.freeze({
   red: "red",
