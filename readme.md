@@ -33,3 +33,5 @@ The DIP states that we should rely on abstractions (such as interfaces or abstra
 Is a creational design pattern that allows you to construct complex objects step by step while hiding the construction details from the client. It’s particularly useful when an object requires multiple steps or configurations to be created
 The Builder pattern allows you to create complex objects while maintaining flexibility and separation of concerns.
 By using different builders, you can customize the construction process and create various types of products.
+
+**Motivation:** Some objects require a ot of steps to create. That makes the inizialization tedious. Instead is better to split the construction.
