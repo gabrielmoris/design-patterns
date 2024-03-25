@@ -22,6 +22,14 @@ In JavaScript, this means that a subclass should be able to extend a parent clas
 [EXAMPLE of Liskov Substitution Principle](SOLID-design-principles/liskov-substitution-principle.js)
 
 ### Interface Segregation Principle
+
+(This principle is not as relevan in Javascript as in another languages)
 No client should be forced to depend on methods it does not use. In other words, it’s about making fine-grained interfaces that are client-specific.
 
-[EXAMPLE of Interface Segregation Principle](SOLID-design-principles/interface-segregation-principle.js)
+[EXAMPLE of Interface Segregation Principle](SOLID-design-principles/interface-segregation-principle.ts)
+
+### Dependency Inversion Principle
+
+The DIP states that we should rely on abstractions (such as interfaces or abstract classes) rather than concrete implementations.
+
+[EXAMPLE of Dependency Inversion Principle](SOLID-design-principles/dependency-inversion-principle.js)
