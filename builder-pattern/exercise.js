@@ -17,30 +17,27 @@
 // Please observe the same placement of spaces and indentation.
 
 // My version: It is not well implemented because It has everything in the same constructor
-class CodeBuilder {
-  constructor(className) {
-    this.className = className;
-    this.fields = [];
-    // todo
+class Property {
+  constructor(propertyName) {
+    this.name = propertyName;
   }
+}
 
-  addField(name) {
-    // todo
-    // reminder: we want a fluent interface
-    this.fields.push(name);
-    return this;
+class ClassCreator {
+  constructor(className) {
+    this.name = className;
+    this.fields = [];
   }
 
   toString() {
-    // todo
     let classArr = [];
     let constructorArg = [];
     let constructorProp = [];
-    classArr.push(`class ${this.className} {\n`);
+    classArr.push(`class ${this.name} {\n`);
     if (this.fields.length > 0) {
       for (let names of this.fields) {
-        constructorArg.push(names);
-        constructorProp.push(`this.${names} = ${names};`);
+        constructorArg.push(names.name);
+        constructorProp.push(`this.${names.name} = ${names.name};`);
       }
       classArr.push(`  constructor(${constructorArg.join(", ")}) {\n`);
       constructorProp.map((cName) => {
@@ -50,6 +47,21 @@ class CodeBuilder {
     }
     classArr.push("}");
     return classArr.join("");
+  }
+}
+
+class CodeBuilder {
+  constructor(className) {
+    this.class = new ClassCreator(className);
+  }
+
+  addField(propertyName) {
+    this.class.fields.push(new Property(propertyName));
+    return this;
+  }
+
+  toString() {
+    return this.class.toString();
   }
 }
 

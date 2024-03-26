@@ -37,3 +37,6 @@ By using different builders, you can customize the construction process and crea
 **Motivation:** Some objects require a ot of steps to create. That makes the inizialization tedious. Instead is better to split the construction.
 
 [A good example of implementation](builder-pattern/builder-facets.js)
+
+- To make the builder fluent, return this
+- Builder is a separate component for building an object
