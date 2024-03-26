@@ -40,3 +40,11 @@ By using different builders, you can customize the construction process and crea
 
 - To make the builder fluent, return this
 - Builder is a separate component for building an object
+
+### [Factory Pattern](factory/factory-explanation.js)
+
+Creational pattern that allows for the creation of objects without exposing the creation logic to the client.
+Its goal is to provide a unified interface for creating various types of objects without revealing the intricate details of their construction.
+In JavaScript, we can implement the Factory Pattern using factory functions.
+
+**Motivation:** When Object creation logic becomes complicated, for example initializer with "optional parameter hell"

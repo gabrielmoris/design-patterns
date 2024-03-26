@@ -1,7 +1,7 @@
-CoordinateSystem = {
-  CARTESIAN: 0,
-  POLAR: 1,
-};
+// CoordinateSystem = {
+//   CARTESIAN: 0,
+//   POLAR: 1,
+// };
 
 class Point {
   constructor(x, y) {
@@ -31,6 +31,7 @@ class Point {
   //   // 2. change ctor
   // }
 
+  // This are the factory methods
   static newCartesianPoint(x, y) {
     return new Point(x, y);
   }
@@ -56,7 +57,7 @@ class PointFactory {
   }
 }
 
-let p1 = new Point(2, 3, CoordinateSystem.CARTESIAN);
+let p1 = new Point(2, 3);
 console.log(p1);
 // Point → PointFactory
 let p2 = PointFactory.newPolarPoint(5, Math.PI / 2);
