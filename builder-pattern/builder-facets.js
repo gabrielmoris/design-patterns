@@ -36,9 +36,10 @@ class PersonBuilder {
   }
 }
 
+// It automatically gets methods such as lives, works and build
 class PersonJobBuilder extends PersonBuilder {
   constructor(person) {
-    // Here I store the reference
+    // Here I send the reference to the Personbuilder
     super(person);
   }
 

@@ -35,3 +35,5 @@ The Builder pattern allows you to create complex objects while maintaining flexi
 By using different builders, you can customize the construction process and create various types of products.
 
 **Motivation:** Some objects require a ot of steps to create. That makes the inizialization tedious. Instead is better to split the construction.
+
+[A good example of implementation](builder-pattern/builder-facets.js)

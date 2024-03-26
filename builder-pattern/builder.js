@@ -3,7 +3,7 @@
 // Example: HTML Builder
 class Tag {
   static get indentSize() {
-    return 2;
+    return 4;
   }
 
   constructor(name = "", text = "") {
@@ -90,5 +90,5 @@ console.log("After I clear: \n", builder2.toString());
 builder2
   .addChildFluent("h1", "Title")
   .addChildFluent("h3", "Subtitle")
-  .addChildFluent("p", "Lorem ipsum paragraphum writum randum thinghsum");
+  .addChildFluent("p", "Lorem ipsum paragraphum writum randum thinghsum"); //I can do it because i return this
 console.log("After I add childs fluently: \n", builder2.toString());

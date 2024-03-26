@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "async": "^3.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
