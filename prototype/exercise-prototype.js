@@ -1,5 +1,5 @@
 // Iimplement Line.deepCopy()
-//to perform a deep copy of the given Line object.
+// to perform a deep copy of the given Line object.
 // This method should return a copy of a Line that
 // contains copies of its start/end points.
 
@@ -17,6 +17,10 @@ class Line {
   }
 
   deepCopy() {
-    return new Line(this.start, this.end);
+    const lineStart = new Point(this.start.x, this.start.y);
+    const lineEnd = new Point(this.end.x, this.end.y);
+    return new Line(lineStart, lineEnd);
   }
 }
+
+module.exports = { Line, Point };

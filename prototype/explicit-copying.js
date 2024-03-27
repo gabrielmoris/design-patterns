@@ -33,7 +33,7 @@ class Person {
 }
 
 let john = new Person("John", new Address("123 London Road", "London", "UK"));
-
+// If I do let jane = john I will copy the reference and overwrite it.
 let jane = john.deepCopy();
 
 jane.name = "Jane";
