@@ -10,18 +10,13 @@ class Person {
 
 class PersonFactory {
   constructor() {
-    this.generalId = 0;
+    this.id = 0;
   }
   createPerson(name) {
-    const newPerson = new Person(this.generalId, name);
-    this.generalId++;
-    return newPerson;
+    const person = new Person(this.id, name);
+    this.id += 1;
+    return person;
   }
 }
 
-const personsCreator = new PersonFactory();
-let person1 = personsCreator.createPerson("Antonio");
-let person2 = personsCreator.createPerson("Francisco");
-
-console.log(person1);
-console.log(person2);
+module.exports = { PersonFactory };

@@ -48,3 +48,5 @@ Its goal is to provide a unified interface for creating various types of objects
 In JavaScript, we can implement the Factory Pattern using factory functions.
 
 **Motivation:** When Object creation logic becomes complicated, for example initializer with "optional parameter hell"
+
+- The [abstract Factory](factory/abstract-factory.js) creational design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. The Abstract Factory pattern is useful when you need to create objects that follow a general structure or pattern, but allow for variations in specific details. It allows for the creation of objects without specifying their concrete classes, which can make the code more flexible and easier to maintain.

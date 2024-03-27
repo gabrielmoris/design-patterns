@@ -31,21 +31,21 @@ class Point {
   //   // 2. change ctor
   // }
 
-  // This are the factory methods
-  static newCartesianPoint(x, y) {
-    return new Point(x, y);
-  }
+  // This are the factory methods Sent to the pointfactory to follow Single Responsability principle
+  // static newCartesianPoint(x, y) {
+  //   return new Point(x, y);
+  // }
 
-  static newPolarPoint(rho, theta) {
-    return new Point(rho * Math.cos(theta), rho * Math.sin(theta));
-  }
+  // static newPolarPoint(rho, theta) {
+  //   return new Point(rho * Math.cos(theta), rho * Math.sin(theta));
+  // }
 
   static get factory() {
     return new PointFactory();
   }
 }
 
-//Factory function
+//Factory function following the simple responsability principle (SOLID) 1 Class 1 task
 class PointFactory {
   // not necessarily static
   newCartesianPoint(x, y) {
@@ -59,10 +59,10 @@ class PointFactory {
 
 let p1 = new Point(2, 3);
 console.log(p1);
-// Point → PointFactory
+// Point → PointFactory ()
 let p2 = PointFactory.newPolarPoint(5, Math.PI / 2);
 console.log(p2);
 
-// this line will not work if newCartesianPoint is static!
+// this line would not work if newCartesianPoint is static!
 let p3 = Point.factory.newCartesianPoint(2, 3);
 console.log(p3);

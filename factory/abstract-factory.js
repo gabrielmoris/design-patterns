@@ -1,3 +1,40 @@
+// Abstract factory function
+function createFactory(type) {
+  if (type === "car") {
+    return {
+      create: function (model) {
+        return new Car(model);
+      },
+    };
+  } else if (type === "truck") {
+    return {
+      create: function (model) {
+        return new Truck(model);
+      },
+    };
+  }
+}
+
+// Concrete factories
+function Car(model) {
+  this.model = model;
+}
+
+function Truck(model) {
+  this.model = model;
+}
+
+// Client code
+const carFactory = createFactory("car");
+const car = carFactory.create("Honda");
+console.log(car.model); // Output: Honda
+
+const truckFactory = createFactory("truck");
+const truck = truckFactory.create("Ford");
+console.log(truck.model); // Output: Ford
+
+///////////////////// ANOTHER EXAMPLE /////////////////////
+
 // Abstract factory is not very useful in JavaScript
 
 const readline = require("readline");
@@ -5,7 +42,6 @@ let rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-const async = require("async");
 
 class HotDrink {
   //In javascript we dont have abstract members
