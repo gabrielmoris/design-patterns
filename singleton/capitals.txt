@@ -1,0 +1,40 @@
+Kabul
+4273000
+Yerevan
+1066000
+Baku
+2374000
+Dhaka
+8906000
+Thimphu
+114551
+Bandar Seri Begawan
+100700
+Beijing
+21516000
+Tbilisi
+1108717
+New Delhi
+21753486
+Jakarta
+10562088
+Tehran
+8694782
+Baghdad
+7144260
+Jerusalem
+919438
+Tokyo
+9730000
+Amman
+4007000
+Astana
+1029000
+Kuwait City
+2380000
+Bishkek
+1000000
+Vientiane
+820000000
+Beirut
+361246000

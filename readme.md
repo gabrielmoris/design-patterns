@@ -53,6 +53,15 @@ In JavaScript, we can implement the Factory Pattern using factory functions.
 
 ### [Prototype Pattern](prototype/prototype-explanation.js)
 
-design pattern that allows you to create objects that are clones of other objects. This pattern is useful when you want to create a large number of objects that share the same properties and methods, but have different values for those properties.
+Design pattern that allows you to create objects that are clones of other objects. This pattern is useful when you want to create a large number of objects that share the same properties and methods, but have different values for those properties.
 
 The Prototype Pattern works by creating a prototype object that contains the properties and methods that you want to share among your objects. You then create new objects by cloning the prototype object, and modifying the properties and methods as needed.
+
+**Motivation:** Complicated objects shoulm't be designed from scratch.
+
+### [Singleton Pattern](singleton/singleton-explanation.js)
+
+Design pattern that ensures a class has only one instance and provides a global point of access to that instance.
+It is used in scenarios where exactly one object is needed to coordinate actions across the system. This pattern is particularly useful in JavaScript due to its ability to limit namespace pollution and reduce the risk of name collisions, which is crucial given JavaScript's global nature.
+
+**Motivation:** Som components only makes sense to have one in the system. (Database repository, Object Factory...). Sometimes the constructor call is expensive, so the initialzation should happen only once.
