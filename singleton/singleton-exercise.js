@@ -1,8 +1,11 @@
-class SingletonTester {
-  static isSingleton(generator) {
-    console.log(generator);
-    const object = generator();
-    return object instanceof generator;
+class SingletonTester
+{
+  static isSingleton(generator)
+  {
+    let instance1 = generator();
+    let instance2 = generator();
+
+    return instance1 === instance2;
   }
 }
 

@@ -1,4 +1,5 @@
 const { SingletonTester } = require("./singleton-exercise");
+
 describe("singleton", function () {
   it("test with a real singleton", function () {
     const item = [1, 2, 3];
