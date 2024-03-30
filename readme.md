@@ -66,10 +66,8 @@ It is used in scenarios where exactly one object is needed to coordinate actions
 
 **Motivation:** Som components only makes sense to have one in the system. (Database repository, Object Factory...). Sometimes the constructor call is expensive, so the initialzation should happen only once.
 
-
 ### [Adapter Pattern](adapter/adapter-explanation.js)
 
-The Adapter pattern is a design pattern that allows two incompatible interfaces to work together by converting the interface of one object so that it matches the interface of another object. It is used to make existing classes work with others without modifying their source code. An example would be a plug adaptor for plugs from other countries.
+The Adapter pattern is a design pattern that allows two incompatible interfaces to work together by converting the interface of one object so that it matches the interface of another object.
 
-
-
+**Motivation:** It is used to make existing classes work with others without modifying their source code. An example would be a plug adaptor for plugs from other countries.

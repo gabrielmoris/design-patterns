@@ -19,6 +19,11 @@ function area(rectangle) {
 //
 // let sq = new Square(123);
 // area(new SquareToRectangleAdapter(sq));
-class SquareToRectangleAdapter {}
+class SquareToRectangleAdapter {
+  constructor(sq) {
+    this._width = sq.side;
+    this._height = sq.side;
+  }
+}
 
-module.exports = { SquareToRectangleAdapter, Square };
+module.exports = { SquareToRectangleAdapter, Square, area };

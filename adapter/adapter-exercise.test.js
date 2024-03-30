@@ -1,4 +1,8 @@
-const { SquareToRectangleAdapter, Square } = require("./adapter-exercise");
+const {
+  SquareToRectangleAdapter,
+  Square,
+  area,
+} = require("./adapter-exercise");
 
 describe("adapter", function () {
   it("should adapt things, duh!", function () {
