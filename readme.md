@@ -71,3 +71,13 @@ It is used in scenarios where exactly one object is needed to coordinate actions
 The Adapter pattern is a design pattern that allows two incompatible interfaces to work together by converting the interface of one object so that it matches the interface of another object.
 
 **Motivation:** It is used to make existing classes work with others without modifying their source code. An example would be a plug adaptor for plugs from other countries.
+
+### [Bridge Pattern](bridge/bridge-explanation.js)
+
+The Bridge design pattern aims to decouple an abstraction from its implementation, allowing the two to vary independently. It is a powerful tool in software development, especially useful in scenarios where system components can have multiple variations. By separating the interface (abstraction) from its implementation, it provides a more flexible and maintainable codebase. This pattern is particularly beneficial in JavaScript applications, where dynamic typing and object composition are common
+
+The Bridge pattern is composed of several key components:
+**Abstraction**: This is the interface that the client interacts with. It contains a reference to the Implementor but does not implement the details itself.
+**Refined Abstraction**: Extends or refines the interface defined by Abstraction to provide more specific interactions.
+**Implementor**: Defines the interface for the concrete implementations. This is where the actual implementation details reside.
+**Concrete Implementor**: Provides specific implementations of the Implementor interface.
