@@ -8,7 +8,8 @@ var shape = {
   },
 };
 
-// Create a new object by cloning the prototype. We modify the properties and methods of the circle object as needed, and then use the move method to move the circle to a new position.
+// Create a new object by cloning the prototype. We modify the properties and methods of the circle object as needed,
+//  and then use the move method to move the circle to a new position.
 var circle = Object.create(shape);
 circle.radius = 5;
 

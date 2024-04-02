@@ -64,7 +64,7 @@ The Prototype Pattern works by creating a prototype object that contains the pro
 Design pattern that ensures a class has only one instance and provides a global point of access to that instance.
 It is used in scenarios where exactly one object is needed to coordinate actions across the system. This pattern is particularly useful in JavaScript due to its ability to limit namespace pollution and reduce the risk of name collisions, which is crucial given JavaScript's global nature.
 
-**Motivation:** Som components only makes sense to have one in the system. (Database repository, Object Factory...). Sometimes the constructor call is expensive, so the initialzation should happen only once.
+**Motivation:** Some components only makes sense to have one in the system. (Database repository, Object Factory...). Sometimes the constructor call is expensive, so the initialzation should happen only once.
 
 ### [Adapter Pattern](adapter/adapter-explanation.js)
 
@@ -76,6 +76,8 @@ The Adapter pattern is a design pattern that allows two incompatible interfaces 
 
 The Bridge design pattern aims to decouple an abstraction from its implementation, allowing the two to vary independently. It is a powerful tool in software development, especially useful in scenarios where system components can have multiple variations. By separating the interface (abstraction) from its implementation, it provides a more flexible and maintainable codebase. This pattern is particularly beneficial in JavaScript applications, where dynamic typing and object composition are common
 
+**Motivation:** Avoid Exponential Class explosion, where variations of abstraction and implementation make an exponential growth in the number of classes.
+
 The Bridge pattern is composed of several key components:
 
 - **Abstraction**: This is the interface that the client interacts with. It contains a reference to the Implementor but does not implement the details itself.
@@ -86,6 +88,8 @@ The Bridge pattern is composed of several key components:
 ### [Composite Pattern](composite/composite-explanation.js)
 
 Structural design pattern that allows you to organize objects into tree structures to represent part-whole hierarchies. This pattern enables clients to treat individual objects and compositions of objects uniformly. In the context of JavaScript, the Composite Pattern is particularly useful for managing UI components, file systems, and other hierarchical structures in a flexible and efficient manner.
+
+**Motivation:** Objects use fields/methods though inheritance and composition. The Composite Pattern's power lies in its ability to treat both simple (Leaf) and composite objects uniformly. This simplifies client code, as it can work with individual objects and compositions of objects without distinguishing between them.
 
 At the core of the Composite Pattern are three main components:
 
