@@ -82,3 +82,13 @@ The Bridge pattern is composed of several key components:
 - **Refined Abstraction**: Extends or refines the interface defined by Abstraction to provide more specific interactions.
 - **Implementor**: Defines the interface for the concrete implementations. This is where the actual implementation details reside.
 - **Concrete Implementor**: Provides specific implementations of the Implementor interface.
+
+### [Composite Pattern](composite/composite-explanation.js)
+
+Structural design pattern that allows you to organize objects into tree structures to represent part-whole hierarchies. This pattern enables clients to treat individual objects and compositions of objects uniformly. In the context of JavaScript, the Composite Pattern is particularly useful for managing UI components, file systems, and other hierarchical structures in a flexible and efficient manner.
+
+At the core of the Composite Pattern are three main components:
+
+- **Component**: This is an interface or an abstract class that declares common operations for both simple and composite objects. It ensures that all concrete classes (both leaves and composites) implement a common set of behaviors.
+- **Leaf**: It represents the end objects of a composition. A leaf has no children. It defines behavior for primitive objects in the composition.
+- **Composite**: A composite is an object that has child components, which could be other composites or leaves. It stores child components and implements child-related operations in the Component interface, such as adding and removing children.
