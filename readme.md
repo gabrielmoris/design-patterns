@@ -96,3 +96,5 @@ At the core of the Composite Pattern are three main components:
 - **Component**: This is an interface or an abstract class that declares common operations for both simple and composite objects. It ensures that all concrete classes (both leaves and composites) implement a common set of behaviors.
 - **Leaf**: It represents the end objects of a composition. A leaf has no children. It defines behavior for primitive objects in the composition.
 - **Composite**: A composite is an object that has child components, which could be other composites or leaves. It stores child components and implements child-related operations in the Component interface, such as adding and removing children.
+
+A good example is in machine learning using [Neural Networks](composite/neural-networks.js)
