@@ -98,3 +98,11 @@ At the core of the Composite Pattern are three main components:
 - **Composite**: A composite is an object that has child components, which could be other composites or leaves. It stores child components and implements child-related operations in the Component interface, such as adding and removing children.
 
 A good example is in machine learning using [Neural Networks](composite/neural-networks.js)
+
+### [Decorator Pattern](decorator/decorator-explanation.js)
+
+Pattern used in object-oriented programming that allows behavior to be added to individual objects, either statically or dynamically, without affecting the behavior of other objects from the same class.
+
+In JavaScript, the Decorator pattern can be implemented in various ways due to the language's flexible nature and its first-class functions. JavaScript allows for the dynamic addition of properties and methods to objects, which aligns well with the decorator pattern's goals.
+
+**Motivation:** When we want to extend or alter the functionality of objects without needing to alter their structure or creating subclasses and affecting the rest.
