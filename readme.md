@@ -105,4 +105,4 @@ Pattern used in object-oriented programming that allows behavior to be added to 
 
 In JavaScript, the Decorator pattern can be implemented in various ways due to the language's flexible nature and its first-class functions. JavaScript allows for the dynamic addition of properties and methods to objects, which aligns well with the decorator pattern's goals.
 
-**Motivation:** When we want to extend or alter the functionality of objects without needing to alter their structure or creating subclasses and affecting the rest.
+**Motivation:** When we want to extend or alter the functionality of objects without needing to alter their structure or creating subclasses and affecting the rest. Alter the object would break the open-closed principle, once it is done it shouldn't need to be modified.
