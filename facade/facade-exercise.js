@@ -69,4 +69,4 @@ class MagicSquareGenerator {
   }
 }
 
-module.exporte = { MagicSquareGenerator };
+module.exports = { MagicSquareGenerator };
