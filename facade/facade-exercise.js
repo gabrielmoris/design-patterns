@@ -64,8 +64,33 @@ class Verifier {
 }
 
 class MagicSquareGenerator {
+  constructor() {
+    this.generator = new Generator();
+    this.splitter = new Splitter();
+    this.verifier = new Verifier();
+  }
+
   generate(size) {
-    // todo
+    let magicSquare;
+
+    do {
+      magicSquare = this.createNewSquare(size);
+    } while (!this.isValidMagicSquare(magicSquare));
+
+    return magicSquare;
+  }
+
+  createNewSquare(size) {
+    const square = [];
+    for (let i = 0; i < size; i++) {
+      square.push(this.generator.generate(size));
+    }
+    return square;
+  }
+
+  isValidMagicSquare(square) {
+    const splitSquare = this.splitter.split(square);
+    return this.verifier.verify(splitSquare);
   }
 }
 
