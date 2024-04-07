@@ -114,3 +114,9 @@ Design pattern that provides a simplified interface to a complex subsystem. In t
 It allows developers to create a more manageable and user-friendly interface, which can lead to better maintainability and reusability of code. However, it is essential to consider the trade-offs, such as potential performance overhead and the risk of hiding poor designs, before implementing the pattern
 
 **Motivation:** The primary goal of the Facade pattern is to reduce the complexity of a system for the end user, often by providing a single point of interaction that hides the underlying complexity.
+
+### [Flyweight Pattern](flyweight/flyweight-explanation.js)
+
+Structural design pattern that aims to optimize code by sharing data and minimizing memory usage. It is particularly useful when dealing with repetitive, slow, and inefficiently shared data
+
+**Motivation:** Avoid redundancy when storing data
