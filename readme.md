@@ -117,6 +117,20 @@ It allows developers to create a more manageable and user-friendly interface, wh
 
 ### [Flyweight Pattern](flyweight/flyweight-explanation.js)
 
-Structural design pattern that aims to optimize code by sharing data and minimizing memory usage. It is particularly useful when dealing with repetitive, slow, and inefficiently shared data
+Structural design pattern that aims to optimize code by sharing data and minimizing memory usage. It is particularly useful when dealing with repetitive, slow, and inefficiently shared data.
+
+It creates an object that shares repeated data to save memory.
 
 **Motivation:** Avoid redundancy when storing data
+
+### [Proxy Pattern](Proxy/proxy-explanation.js)
+
+Pattern that allows you to create a surrogate or placeholder object for another object, controlling access to it. This pattern is particularly useful for managing interactions with the target object, allowing for operations like validation, property access control, performance optimization, and more, without altering the object itself.
+
+**Motivation:**
+
+- Validation: Ensuring that only valid data is set on object properties
+- Access Control: Controlling access to certain properties of an object
+- Lazy Loading: Deferring the loading of an object or its properties until they are actually needed, which can improve performance
+- Caching: Implementing caching mechanisms by intercepting property access and returning cached values if available
+- Logging and Monitoring: Intercepting operations to log actions or monitor performance metrics
