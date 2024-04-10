@@ -127,6 +127,8 @@ It creates an object that shares repeated data to save memory.
 
 Pattern that allows you to create a surrogate or placeholder object for another object, controlling access to it. This pattern is particularly useful for managing interactions with the target object, allowing for operations like validation, property access control, performance optimization, and more, without altering the object itself.
 
+A proxy has the same interface as the underlying object. But edits functionality to the redefined member functions.
+
 **Motivation:**
 
 - Validation: Ensuring that only valid data is set on object properties
