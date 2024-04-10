@@ -123,7 +123,7 @@ It creates an object that shares repeated data to save memory.
 
 **Motivation:** Avoid redundancy when storing data
 
-### [Proxy Pattern](Proxy/proxy-explanation.js)
+### [Proxy Pattern](proxy/proxy-explanation.js)
 
 Pattern that allows you to create a surrogate or placeholder object for another object, controlling access to it. This pattern is particularly useful for managing interactions with the target object, allowing for operations like validation, property access control, performance optimization, and more, without altering the object itself.
 
@@ -136,3 +136,15 @@ A proxy has the same interface as the underlying object. But edits functionality
 - Lazy Loading: Deferring the loading of an object or its properties until they are actually needed, which can improve performance
 - Caching: Implementing caching mechanisms by intercepting property access and returning cached values if available
 - Logging and Monitoring: Intercepting operations to log actions or monitor performance metrics
+
+### [Chain of Responsibility Pattern](chain-of-responsibility/chain-of-responsibility-explanation.js)
+
+Behavioral design pattern that allows you to pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+
+**Motivation:** When it is neccesary to process data in different steps. Or for creating a system where multiple objects may handle a request, but the sender of a request does not need to be aware of which object will handle it, thus achieving decoupling between the sender and the receivers of a request.
+
+The Chain of Responsibility pattern involves several key components:
+
+- **Handler Interface or Abstract Class**: This defines a standard interface for handling requests. In JavaScript, since we don't have interfaces or abstract classes as in other languages like Java, we typically use functions or objects to define handlers.
+- **Concrete Handlers**: These are specific handlers that process the requests. A concrete handler has two main responsibilities: to process the request if it's capable or to forward the request to the next handler in the chain.
+- **Client**: The client sends the request to the first handler in the chain. It does not know which handler will process the request.
