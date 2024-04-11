@@ -1,5 +1,3 @@
-// Event (check observer patern). People can subscrive to it to see changes.
-
 class Event {
   constructor() {
     this.handlers = new Map();
@@ -28,13 +26,14 @@ const WhatToQuery = Object.freeze({
 });
 
 class Query {
-  constructor(creatureNane, whatToQuery, value) {
-    this.creatureNane = creatureNane;
+  constructor(creatureName, whatToQuery, value) {
+    this.creatureName = creatureName;
     this.whatToQuery = whatToQuery;
     this.value = value;
   }
 }
 
+// This is the event Broker: A centralized object that exposes some shared event (queries) and everyone can subscribe to those events.
 class Game {
   constructor() {
     this.queries = new Event();
@@ -82,7 +81,7 @@ class CreatureModifier {
   }
 
   handle(sender, query) {
-    // in inheritors
+    // Abstract: implement in inheritors
   }
 
   dispose() {
@@ -90,14 +89,14 @@ class CreatureModifier {
   }
 }
 
-class DoubleAttackModidier extends CreatureModifier {
+class DoubleAttackModifier extends CreatureModifier {
   constructor(game, creature) {
     super(game, creature);
   }
 
   handle(sender, query) {
     if (
-      query.creatureNane === this.creatureNane &&
+      query.creatureName === this.creature.name &&
       query.whatToQuery === WhatToQuery.attack
     ) {
       query.value *= 2;
@@ -105,11 +104,31 @@ class DoubleAttackModidier extends CreatureModifier {
   }
 }
 
-let game = new Game();
-let goblin = new Creature(game, "gobling", 2, 2);
+class IncreaseDefenseModifier extends CreatureModifier {
+  constructor(game, creature) {
+    super(game, creature);
+  }
 
+  handle(sender, query) {
+    if (
+      query.creatureName === this.creature.name &&
+      query.whatToQuery === WhatToQuery.defense
+    ) {
+      query.value += 2;
+    }
+  }
+}
+
+let game = new Game();
+let goblin = new Creature(game, "Mr. Goblin", 2, 2);
 console.log(goblin.toString());
 
-let dam = new DoubleAttackModidier(game, goblin);
+let dam = new DoubleAttackModifier(game, goblin);
+console.log(goblin.toString());
 
+let idm = new IncreaseDefenseModifier(game, goblin);
+console.log(goblin.toString());
+idm.dispose();
+
+dam.dispose();
 console.log(goblin.toString());
