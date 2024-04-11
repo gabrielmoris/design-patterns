@@ -141,6 +141,13 @@ A proxy has the same interface as the underlying object. But edits functionality
 
 Behavioral design pattern that allows you to pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
 
+    Command / Query separation: When we operate on objects, we separate invocations in 2 concepts.
+    - Command: send an action or change.
+    - Query: the request of information without changing values.
+    - CQS: Having separate means of sending commands and queries.
+
+    The Chain of responsability is a pattern that would help to separate this concepts.
+
 **Motivation:** When it is neccesary to process data in different steps. Or for creating a system where multiple objects may handle a request, but the sender of a request does not need to be aware of which object will handle it, thus achieving decoupling between the sender and the receivers of a request.
 
 The Chain of Responsibility pattern involves several key components:
