@@ -155,3 +155,13 @@ The Chain of Responsibility pattern involves several key components:
 - **Handler Interface or Abstract Class**: This defines a standard interface for handling requests. In JavaScript, since we don't have interfaces or abstract classes as in other languages like Java, we typically use functions or objects to define handlers.
 - **Concrete Handlers**: These are specific handlers that process the requests. A concrete handler has two main responsibilities: to process the request if it's capable or to forward the request to the next handler in the chain.
 - **Client**: The client sends the request to the first handler in the chain. It does not know which handler will process the request.
+
+### [Command Pattern](command/command-explanation.js)
+
+Behavioral design pattern that encapsulates a request as an object, thereby allowing users to parameterize clients with queues, requests, and operations. It also supports undoable operations. This pattern is particularly useful in JavaScript due to its first-class functions, which allow for a straightforward implementation of the Command Pattern.
+
+The essence of the Command Pattern is to separate the object that issues a request from the one that actually executes it. This is achieved by encapsulating a request as an object, thus allowing for more complex data structures such as command queues and logs. It also makes it easier to extend commands without changing the existing code.
+
+A **Command** Is an object that represents an instruction to perform a particular action. It contains all the informatio for the action to be taken.
+
+**Motivation:** When we want the possibility to record operations to undo some operations. Or to know which function was calling specific operations.
