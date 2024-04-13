@@ -165,3 +165,7 @@ The essence of the Command Pattern is to separate the object that issues a reque
 A **Command** Is an object that represents an instruction to perform a particular action. It contains all the informatio for the action to be taken.
 
 **Motivation:** When we want the possibility to record operations to undo some operations. Or to know which function was calling specific operations.
+
+### [Interpreter Pattern](interpreter/interpreter-explanation.js)
+
+Pattern that defines a representation for a grammar and provides an interpreter to interpret sentences in that grammar. In the context of JavaScript, the Interpreter Pattern can be used to create a simple expression evaluator.
