@@ -103,3 +103,14 @@ const expression = new BinaryExpression(
 // Evaluate the expression
 const result = interpreter.interpret(expression);
 console.log(result); // Output: 25
+
+// In this example, we create an expression (x + (y - 5)), assign values to the variables x and y,
+// and then use the Interpreter to evaluate the expression and get the result.
+
+// The key aspects of the Interpreter Pattern in this example are:
+
+// 1. The definition of the grammar using classes that represent different types of expressions.
+// 2. The Interpreter class that manages the context (variable values) and provides the interpret
+// method to evaluate an expression.
+// 3.The separation of the grammar definition and the interpreter implementation, which allows for
+//  easy extensibility and maintainability of the expression language.
