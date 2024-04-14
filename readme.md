@@ -169,3 +169,7 @@ A **Command** Is an object that represents an instruction to perform a particula
 ### [Interpreter Pattern](interpreter/interpreter-explanation.js)
 
 Pattern that defines a representation for a grammar and provides an interpreter to interpret sentences in that grammar. In the context of JavaScript, the Interpreter Pattern can be used to create a simple expression evaluator.
+
+An **Interpreter** is a component that processes structured text data by turning it into separate lexical tokens (_lexing_) and then interpreting sequences of this tokens (_parsing_)
+
+**Motivation:** Programming language compilers, numeric / regular expressions.
