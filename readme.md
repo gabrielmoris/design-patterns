@@ -173,3 +173,22 @@ Pattern that defines a representation for a grammar and provides an interpreter 
 An **Interpreter** is a component that processes structured text data by turning it into separate lexical tokens (_lexing_) and then interpreting sequences of this tokens (_parsing_)
 
 **Motivation:** Programming language compilers, numeric / regular expressions.
+
+### [Iterator Pattern](iterator/iterator-explanation.js)
+
+Behavioral pattern that provides a way to access the elements of an aggregate object (such as an array, list, or tree) sequentially without exposing its underlying representation.
+
+he key components of the Iterator pattern are:
+
+- **Iterator:** The Iterator is an object that provides a standard way to traverse the elements of a collection. It has methods like next(), hasNext(), first(), and reset() to control the iteration process.
+- **Iterable:** The Iterable is the collection of data that would be iterated over. It provides a way to create an Iterator for itself, usually through a getIterator() method.
+- **Client:** The Client is the object that uses the Iterator to access the elements of the Iterable.
+
+The main benefits of the Iterator pattern in JavaScript are:
+
+- **Encapsulation:** The Iterator pattern encapsulates the underlying structure of the data, allowing the client to access the elements of the collection without knowing its internal implementation.
+- **Flexibility:** The Iterator pattern allows for the creation of different types of iterators for the same collection, enabling different traversal algorithms to be used.
+- **Separation of Concerns:** The Iterator pattern separates the responsibility of accessing and traversing the elements from the aggregate object, making the code more modular and maintainable.
+- **Lazy Evaluation:** Iterators can be used to implement lazy evaluation, where elements are generated or retrieved only when they are needed, rather than all at once.
+
+The Iterator pattern is widely used in JavaScript, especially with the introduction of the Symbol.iterator and for...of constructs in ES6, which provide built-in support for iterables and iterators.
