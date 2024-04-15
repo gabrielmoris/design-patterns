@@ -192,3 +192,5 @@ The main benefits of the Iterator pattern in JavaScript are:
 - **Lazy Evaluation:** Iterators can be used to implement lazy evaluation, where elements are generated or retrieved only when they are needed, rather than all at once.
 
 The Iterator pattern is widely used in JavaScript, especially with the introduction of the Symbol.iterator and for...of constructs in ES6, which provide built-in support for iterables and iterators.
+
+**Motivation:** When it is neccesary to traverse over a data structure.
