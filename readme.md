@@ -194,3 +194,15 @@ The main benefits of the Iterator pattern in JavaScript are:
 The Iterator pattern is widely used in JavaScript, especially with the introduction of the Symbol.iterator and for...of constructs in ES6, which provide built-in support for iterables and iterators.
 
 **Motivation:** When it is neccesary to traverse over a data structure.
+
+### [Mediator Pattern](mediator/mediator-explanation.js)
+
+Behavioral design pattern that promotes loose coupling between objects by encapsulating how they communicate with each other. It provides a centralized communication channel between different objects, allowing them to interact without needing to know about each other's implementation details.
+
+The benefits of the Mediator Pattern include:
+
+- **Loose Coupling:** The colleagues (in this case, the User objects) are not directly dependent on each other, making the system more flexible and easier to maintain.
+- **Centralized Communication:** The mediator handles all the communication between the colleagues, making it easier to understand and modify the interaction logic.
+- **Reusability:** The mediator can be reused across different parts of the application, promoting code reuse.
+
+**Motivation:** The Mediator Pattern is particularly useful in scenarios where you have a complex system with many objects that need to communicate with each other, and you want to avoid the "spaghetti code" that can arise from direct object-to-object communication.
