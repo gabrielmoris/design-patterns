@@ -206,3 +206,4 @@ The benefits of the Mediator Pattern include:
 - **Reusability:** The mediator can be reused across different parts of the application, promoting code reuse.
 
 **Motivation:** The Mediator Pattern is particularly useful in scenarios where you have a complex system with many objects that need to communicate with each other, and you want to avoid the "spaghetti code" that can arise from direct object-to-object communication.
+This pattern is also useful when components may go in and out of a system at any time (like a chatroom)
