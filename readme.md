@@ -219,4 +219,4 @@ Components of the Memento Pattern:
 - **Memento:** This object holds the internal state of the originator at a particular time. The memento is passive; it doesn't do anything on its own but simply holds the state given to it by the originator.
 - **Caretaker:** This component is responsible for the lifecycle of the memento. It saves and retrieves mementos but does not modify them or directly interact with their contents.
 
-**Motivation:** This implementation showcases how the Memento pattern can be used in JavaScript to provide undo functionality in applications like text editors, where users might want to revert to previous states of a document
+**Motivation:** This implementation showcases how the Memento pattern can be used in JavaScript to provide undo functionality in applications like text editors, where users might want to revert to previous states of a document.
