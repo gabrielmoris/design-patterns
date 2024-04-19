@@ -12,7 +12,7 @@ class Memento {
 
 class TokenMachine {
   constructor() {
-    // todo
+    this.tokens = [];
   }
 
   addTokenValue(value) {
@@ -20,11 +20,15 @@ class TokenMachine {
   }
 
   addToken(token) {
-    // todo
+    this.tokens.push(token);
+    let m = new Memento();
+    m.tokens = this.tokens.map((t) => new Token(t.value));
+    return m;
   }
 
   revert(m) {
-    // todo
+    // copy all the values of the tokens tokens from m
+    this.tokens = m.tokens.map((t) => new Token(t.value));
   }
 }
 
