@@ -223,7 +223,7 @@ Components of the Memento Pattern:
 
 ### [Observer Pattern](observer/observer-explanation.js)
 
-Design pattern in JavaScript that allows an object (the subject) to maintain a list of its dependents (observers) and automatically notify them of any state changes, without tightly coupling the subject and the observers
+Design pattern in JavaScript that allows an object (the subject) to maintain a list of its dependents (observers) and automatically notify them of any state changes, without tightly coupling the subject and the observers. It is an intrusive approach because we need to make modifications in the class.
 
 The Observer Pattern consists of three main components:
 
