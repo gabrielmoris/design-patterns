@@ -220,3 +220,24 @@ Components of the Memento Pattern:
 - **Caretaker:** This component is responsible for the lifecycle of the memento. It saves and retrieves mementos but does not modify them or directly interact with their contents.
 
 **Motivation:** This implementation showcases how the Memento pattern can be used in JavaScript to provide undo functionality in applications like text editors, where users might want to revert to previous states of a document.
+
+### [Observer Pattern](observer/observer-explanation.js)
+
+Design pattern in JavaScript that allows an object (the subject) to maintain a list of its dependents (observers) and automatically notify them of any state changes, without tightly coupling the subject and the observers
+
+The Observer Pattern consists of three main components:
+
+- **Subject**: The object that holds the state and notifies its observers when the state changes.
+- **Observer**: An object that wants to be notified when the subject's state changes.(Consumer)
+- **Observable**: The interface that the subject implements to allow observers to subscribe, unsubscribe, and be notified of changes. (Generator)
+
+The key steps are:
+
+- The subject maintains a list of its observers.
+- Observers register (subscribe) with the subject to receive notifications.
+- When the subject's state changes, it notifies all its registered observers by calling their update method.
+- Observers can also unsubscribe from the subject when they no longer want to receive notifications.
+
+This pattern promotes loose coupling between the subject and its observers, making the code more modular and easier to maintain. It's commonly used in event-driven programming, where the subject acts as the event emitter and the observers are the event listeners
+
+**Motivation:** When we need to be informed about certain events (Object property changes, actions..)
