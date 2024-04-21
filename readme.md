@@ -241,3 +241,15 @@ The key steps are:
 This pattern promotes loose coupling between the subject and its observers, making the code more modular and easier to maintain. It's commonly used in event-driven programming, where the subject acts as the event emitter and the observers are the event listeners
 
 **Motivation:** When we need to be informed about certain events (Object property changes, actions..)
+
+### [State Pattern](state/state-explanation.js)
+
+Behavioral design pattern that allows an object to alter its behavior when its internal state changes. It encapsulates different states and the logic associated with each state into separate objects, allowing the object to change its behavior by changing its internal state object.
+
+The key benefits of the State pattern are:
+
+- **Encapsulation:** The state-specific behavior is encapsulated within the state objects, making the code more modular and easier to maintain.
+- **Flexibility:** Adding new states or modifying existing states is easy, as it only requires creating a new state class or modifying an existing one, without affecting the Button class.
+- **Clarity:** The state-specific logic is clearly separated and organized, making the code more readable and easier to understand.
+
+**Motivation:** The State pattern is particularly useful when you have an object with complex behavior that depends on its internal state, and you want to avoid using a large number of conditional statements to handle the different states.
