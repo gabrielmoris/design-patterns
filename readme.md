@@ -255,3 +255,15 @@ The key benefits of the State pattern are:
 **Motivation:** The State pattern is particularly useful when you have an object with complex behavior that depends on its internal state, and you want to avoid using a large number of conditional statements to handle the different states.
 
 [Example using React](state/react-example.jsx)
+
+### [Strategy Pattern](strategy/strategy-explanation.js)
+
+Dehavioral design pattern that allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. This pattern enables you to select an algorithm at runtime, making your code more flexible and maintainable.
+
+The key benefits of using the Strategy pattern in this example are:
+
+- **Flexibility:** The client can use different algorithms without modifying its own code. It simply needs to provide a different `Algorithm instance`.
+- **Maintainability:** The algorithms are encapsulated in their own classes, making the code more modular and easier to maintain. If you need to add or modify an algorithm, you only need to update the corresponding `Algorithm instance` implementation.
+- **Testability:** The algorithms can be tested independently, as they are decoupled from the `Algorithm instance`.
+
+**Motivation:** The Strategy pattern is particularly useful when you have a family of related algorithms and you want to make them interchangeable, without tightly coupling the client to the specific implementation details of each algorithm.
