@@ -253,3 +253,5 @@ The key benefits of the State pattern are:
 - **Clarity:** The state-specific logic is clearly separated and organized, making the code more readable and easier to understand.
 
 **Motivation:** The State pattern is particularly useful when you have an object with complex behavior that depends on its internal state, and you want to avoid using a large number of conditional statements to handle the different states.
+
+[Example using React](state/react-example.jsx)
