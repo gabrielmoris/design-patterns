@@ -258,7 +258,7 @@ The key benefits of the State pattern are:
 
 ### [Strategy Pattern](strategy/strategy-explanation.js)
 
-Dehavioral design pattern that allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. This pattern enables you to select an algorithm at runtime, making your code more flexible and maintainable.
+Behavioral design pattern that allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. This pattern enables you to select an algorithm at runtime, making your code more flexible and maintainable.
 
 The key benefits of using the Strategy pattern in this example are:
 
@@ -267,3 +267,9 @@ The key benefits of using the Strategy pattern in this example are:
 - **Testability:** The algorithms can be tested independently, as they are decoupled from the `Algorithm instance`.
 
 **Motivation:** The Strategy pattern is particularly useful when you have a family of related algorithms and you want to make them interchangeable, without tightly coupling the client to the specific implementation details of each algorithm.
+
+### [Template Pattern](template/template-explanation.js)
+
+Behavioral design pattern that allows you to define the skeleton of an algorithm in a base class, while letting subclasses override specific steps of the algorithm without changing its structure. The main difference with the Strategy pattern is that the Template does the same thing through inheritance instead Composition.
+
+**Motivation:** The Template Pattern is useful when you have a common algorithm that needs to be executed in different ways, depending on the specific requirements of each subclass. By separating the algorithm's structure from its implementation, the Template Pattern allows you to maintain a consistent and reusable codebase while still providing flexibility for subclasses to adapt the algorithm to their needs.
