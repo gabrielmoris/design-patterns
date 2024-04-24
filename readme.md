@@ -273,3 +273,23 @@ The key benefits of using the Strategy pattern in this example are:
 Behavioral design pattern that allows you to define the skeleton of an algorithm in a base class, while letting subclasses override specific steps of the algorithm without changing its structure. The main difference with the Strategy pattern is that the Template does the same thing through inheritance instead Composition.
 
 **Motivation:** The Template Pattern is useful when you have a common algorithm that needs to be executed in different ways, depending on the specific requirements of each subclass. By separating the algorithm's structure from its implementation, the Template Pattern allows you to maintain a consistent and reusable codebase while still providing flexibility for subclasses to adapt the algorithm to their needs.
+
+### [Visitor Pattern](visitor/visitor-explanation.js)
+
+Behavioral design pattern that allows you to separate the algorithm from the object structure on which it operates.
+
+**Motivation:** Imagine you have a set of classes that represent different types of items, such as books, CDs, and electronics. Each of these item classes has its own properties and methods. Now, you want to perform various operations on these items, such as calculating the total price, applying discounts, or generating a report. If you implement these operations directly in the item classes, the code will become cluttered and difficult to maintain, especially if you need to add new operations in the future.
+
+The solution is the Visitor Pattern:
+
+It separates the operations from the item classes. The key components of the Visitor Pattern are:
+
+- **Visitable:** The classes that represent the items (e.g., Book, CD, Electronics) are called "Visitables". These classes have an accept method that takes a Visitor as a parameter.
+- **Visitor:** The Visitor is an object that defines the operations to be performed on the Visitables. Each operation is implemented in a separate visit method, where the method name corresponds to the type of Visitable.
+- **Client:** The Client is the code that uses the Visitor to perform operations on the Visitables.
+
+The key benefits of the Visitor Pattern are:
+
+- **Open/Closed Principle:** You can add new operations (Visitors) without modifying the Visitable classes.
+- **Single Responsibility Principle:** The Visitable classes focus on their own data and behavior, while the Visitor classes focus on the operations.
+- **Extensibility:** You can easily add new Visitables without modifying the existing Visitor classes.
