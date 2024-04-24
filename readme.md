@@ -28,6 +28,8 @@ The DIP states that we should rely on abstractions (such as interfaces or abstra
 
 # Design Patterns
 
+### **<ins>Creational</ins>**
+
 ### [Builder Pattern](builder-pattern/builder-explanation.js)
 
 Is a creational design pattern that allows you to construct complex objects step by step while hiding the construction details from the client. It’s particularly useful when an object requires multiple steps or configurations to be created
@@ -65,6 +67,8 @@ Design pattern that ensures a class has only one instance and provides a global 
 It is used in scenarios where exactly one object is needed to coordinate actions across the system. This pattern is particularly useful in JavaScript due to its ability to limit namespace pollution and reduce the risk of name collisions, which is crucial given JavaScript's global nature.
 
 **Motivation:** Some components only makes sense to have one in the system. (Database repository, Object Factory...). Sometimes the constructor call is expensive, so the initialzation should happen only once.
+
+### **<ins>Structural</ins>**
 
 ### [Adapter Pattern](adapter/adapter-explanation.js)
 
@@ -136,6 +140,8 @@ A proxy has the same interface as the underlying object. But edits functionality
 - Lazy Loading: Deferring the loading of an object or its properties until they are actually needed, which can improve performance
 - Caching: Implementing caching mechanisms by intercepting property access and returning cached values if available
 - Logging and Monitoring: Intercepting operations to log actions or monitor performance metrics
+
+### **<ins>Behavioural</ins>**
 
 ### [Chain of Responsibility Pattern](chain-of-responsibility/chain-of-responsibility-explanation.js)
 
@@ -293,3 +299,36 @@ The key benefits of the Visitor Pattern are:
 - **Open/Closed Principle:** You can add new operations (Visitors) without modifying the Visitable classes.
 - **Single Responsibility Principle:** The Visitable classes focus on their own data and behavior, while the Visitor classes focus on the operations.
 - **Extensibility:** You can easily add new Visitables without modifying the existing Visitor classes.
+
+# Patterns Summary
+
+### **<ins>Creational</ins>**
+
+- **[Builder Pattern](builder-pattern/builder-explanation.js):** Separate component for when Object construction gets too complicated. Can create mutually cooperating subbuilders.
+- **[Factory Pattern](factory/factory-explanation.js):** When Object creation logic becomes complicated. It bstracts the object creation process.
+- **[Prototype Pattern](prototype/prototype-explanation.js):** When you want to create a large number of objects that share the same properties and methods, but have different values for those properties. Creation of objects based on existing parent-objects.
+- **[Singleton Pattern](singleton/singleton-explanation.js):** When you need to limit namespace pollution and reduce the risk of name collisions. Ensure that just a single instance exists.
+
+### **<ins>Structural</ins>**
+
+- **[Adapter Pattern](adapter/adapter-explanation.js):** When you need to make existing classes work with others without modifying their source code. Converts the intrface you get to the interface you need.
+- **[Bridge Pattern](bridge/bridge-explanation.js):** When system components can have multiple variations. By separating the interface (abstraction) from its implementation, it provides a more flexible and maintainable codebase Decouples abstraction from implementation.
+- **[Composite Pattern](composite/composite-explanation.js):** When you need to manage UI components, file systems, and other hierarchical structures in a flexible and efficient manner. Allows to work with individual objects and compositions of objects without distinguishing between them.
+- **[Decorator Pattern](decorator/decorator-explanation.js):** When we want to extend or alter the functionality of objects without needing to alter their structure or creating subclasses and affecting the rest. Allows behavior to be added to individual objects, either statically or dynamically, without affecting the behavior of other objects from the same class
+- **[Façade Pattern](facade/facade-explanation.js):** When you need to reduce the complexity of a system for the end user, often by providing a single point of interaction that hides the underlying complexity. It provides a simplified interface to a complex subsystem.
+- **[Flyweight Pattern](flyweight/flyweight-explanation.js):** When you need to save Memory. It creates an object that shares repeated data to save memory.
+- **[Proxy Pattern](proxy/proxy-explanation.js):** When you need to manage interactions with the target object, allowing for operations like validation, property access control, performance optimization, and more, without altering the object itself. Forwards calls to the real object performing additional functions.
+
+### **<ins>Behavioural</ins>**
+
+- **[Chain of Responsibility Pattern](chain-of-responsibility/chain-of-responsibility-explanation.js):** When it is neccesary to process data in different steps. Allows components to proccess information/events in a chain.
+- **[Command Pattern](command/command-explanation.js):** When we waant to encapsulate the command and the execution. Separates the object that issues a request from the one that actually executes it.
+- **[Interpreter Pattern](interpreter/interpreter-explanation.js):** For programming language compilers, numeric / regular expressions. It transforms text input into object-oriented structures.
+- **[Iterator Pattern](iterator/iterator-explanation.js):** When it is neccesary to traverse over a data structure. Provides a way to access the elements of an aggregate object.
+- **[Mediator Pattern](mediator/mediator-explanation.js):** When you have a complex system with many objects that need to communicate with each other. Provides mediation between 2 objects.
+- **[Memento Pattern](memento/memento-explanation.js):** When you want to provide undo functionality in applications like text editors. Captures and externalizes the internal state of an object without exposing its internal structure
+- **[Observer Pattern](observer/observer-explanation.js):** When you need an object to notify others about any state changes. Allows notifications.
+- **[State Pattern](state/state-explanation.js):** When you have an object with complex behavior that depends on its internal state, and you want to avoid using a large number of conditional statements to handle the different states. Allows an object to alter its behavior when its internal state changes.
+- **[Strategy Pattern](strategy/strategy-explanation.js):** When you have a family of related algorithms and you want to make them interchangeable. Allows you to define a family of algorithms, encapsulate each one, and make them interchangeable using composition.
+- **[Template Pattern](template/template-explanation.js):** When you have a common algorithm that needs to be executed in different ways, depending on the specific requirements of each subclass. Allows you to define the skeleton of an algorithm in a base class, while letting subclasses override specific steps of the algorithm without changing its structure using inheritance.
+- **[Visitor Pattern](visitor/visitor-explanation.js):** When you need to implement additional functionalities without needing to keepp changing the objects each time. Alows you to separate the algorithm from the object structure on which it operates.

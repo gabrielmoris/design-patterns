@@ -1,5 +1,7 @@
-// The Factory Pattern abstracts the object creation process within a specialized function known as the factory, createUser is our factory function
-// Its goal is to provide a unified interface for creating various types of objects without revealing the intricate details of their construction.
+// The Factory Pattern abstracts the object creation process within a specialized function known as the factory,
+// createUser is our factory function
+// Its goal is to provide a unified interface for creating various types of objects without revealing the intricate
+// details of their construction.
 const createUser = (role, userInfo) => {
   const user = { name: userInfo.name, password: userInfo.password };
   const specificInfo = {
@@ -12,7 +14,7 @@ const createUser = (role, userInfo) => {
     }),
   };
 
-  const additionalInfo = specificInfo[role] ? specificInforole : null;
+  const additionalInfo = specificInfo[role] ? specificInfo[role] : null;
   if (!additionalInfo) {
     throw new Error("Invalid role specified.");
   }
